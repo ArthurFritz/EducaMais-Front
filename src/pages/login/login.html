@@ -1,0 +1,20 @@
+<ion-content>
+    <p padding text-center>
+      <img src="assets/img/logo.png"/>      
+    </p>
+    <form [formGroup]="form">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input formControlName="username" type="email" value=""></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input formControlName="password" type="password" value=""></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+    <div padding text-center>
+      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="logar()"><ion-icon name="key"></ion-icon> Entrar </button>
+    </div>
+</ion-content>
