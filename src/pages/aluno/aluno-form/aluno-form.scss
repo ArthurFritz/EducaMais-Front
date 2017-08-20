@@ -1,3 +1,21 @@
 page-aluno-form {
-    
+ 
+    .fotoPessoa{
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    .editarFoto{
+        position: absolute;
+        margin-left: -200px;
+        margin-top: 160px;
+        background: rgba(255, 255, 255, 0.68);
+        width: 200px;
+        height: 50px;
+        padding-top: 10px;
+        font-weight: bold;
+        color: color($colors,secondary);
+    }
 }

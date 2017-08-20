@@ -15,9 +15,9 @@ export class PessoaService {
                           .map((response: Response) => response.json());
 
     }
-    
+
     getPessoas() {
-    return this.httpClient.get(AppSettings.API_ENDPOINT+"pessoa")
+    return this.httpClient.get(AppSettings.API_ENDPOINT)
                           .map((response: Response) => response.json());
     }
 

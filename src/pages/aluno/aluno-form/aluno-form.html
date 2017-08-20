@@ -5,10 +5,10 @@
 </ion-header>
 <ion-content>
     <div padding text-center>
-        <ion-thumbnail (click)="tirarFoto()">
-            <img src="img/thumbnail-totoro.png">
-        </ion-thumbnail>
-        <button ion-button icon-left color="primary" *ngIf="fotoPreview != ''" (click)="tirarFoto()"><ion-icon name="camera"></ion-icon> Tirar foto </button>
+        <img class="fotoPessoa" *ngIf="fotoPreview" src="{{fotoPreview}}" (click)="tirarFoto(fileInput)">
+        <span class="editarFoto" *ngIf="fotoPreview">Alterar Foto</span>
+        <input #fileInput type="file" style="display:none" accept="image/*" (change)="handleFileSelect($event)">
+        <button ion-button icon-left color="primary" *ngIf="!fotoPreview" (click)="tirarFoto(fileInput)"><ion-icon name="camera"></ion-icon> Foto </button>
     </div>
     <form [formGroup]="form">
         <ion-list>

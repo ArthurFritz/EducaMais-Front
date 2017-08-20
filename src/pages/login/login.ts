@@ -14,7 +14,7 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, fb:FormBuilder) {
     this.form = fb.group({
-      'username': ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.email])],
+      'username': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
   }

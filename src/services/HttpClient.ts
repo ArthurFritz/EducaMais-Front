@@ -78,6 +78,8 @@ export class HttpClient {
       }else{
         return {title:"Error", message:"Erro desconhecido"} 
       }
+    }else if(error.status == 413){
+      return {title:"Error", message:"Arquivo muito grande para envio"} 
     }
   }
 }
