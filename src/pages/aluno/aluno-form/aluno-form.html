@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Informações Aluno</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <div padding text-center>
+        <ion-thumbnail (click)="tirarFoto()">
+            <img src="img/thumbnail-totoro.png">
+        </ion-thumbnail>
+        <button ion-button icon-left color="primary" *ngIf="fotoPreview != ''" (click)="tirarFoto()"><ion-icon name="camera"></ion-icon> Tirar foto </button>
+    </div>
+    <form [formGroup]="form">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Nome</ion-label>
+                <ion-input formControlName="nome" type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Nascimento</ion-label>
+                <ion-datetime formControlName="nascimento" displayFormat="DD/MM/YYYY"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>E-mail</ion-label>
+                <ion-input formControlName="email" type="email" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Observacao</ion-label>
+                <ion-input formControlName="observacao" type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Instituicao</ion-label>
+                <ion-input formControlName="instituicao" type="text" value=""></ion-input>
+            </ion-item>
+        </ion-list>
+    </form>
+    <div padding text-center>
+      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Salvar </button>
+    </div>
+</ion-content>

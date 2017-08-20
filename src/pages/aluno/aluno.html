@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Alunos</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-fab bottom right>
+        <button ion-fab (click)="newAluno()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+    <ion-list>
+        <button *ngFor="let item of listPessoas" ion-item>
+        <ion-icon item-left></ion-icon>
+            {{item.nome}} <br/>
+            {{item.email}}
+        <div class="item-note" item-right>
+            {{item.instituicao}} <br>
+            {{item.nascimento | date:'d/M/y'}} <br>
+        </div>
+        <div>{{item.observacao}}</div>
+        </button>
+    </ion-list>
+</ion-content>

@@ -6,19 +6,31 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { AlunoPage } from '../pages/aluno/aluno';
+import { AlunoFormPage } from "../pages/aluno/aluno-form/aluno-form";
+
+import {HttpModule} from '@angular/http';
+import {HttpClient} from '../services/HttpClient';
+import {PessoaService} from '../services/pessoa.service';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera,CameraOptions} from '@ionic-native/camera';
+import { PhotoLibrary } from '@ionic-native/photo-library';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    AlunoPage,
+    AlunoFormPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -26,12 +38,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    AlunoPage,
+    AlunoFormPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Camera,
+    PhotoLibrary,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpClient,
+    PessoaService
   ]
 })
 export class AppModule {}
