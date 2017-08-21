@@ -8,16 +8,18 @@ import {HttpClient} from './HttpClient';
 @Injectable()
 export class PessoaService {
     
+    private urlPessoa = AppSettings.API_ENDPOINT+"pessoa"; 
+
     constructor(private http: Http, private httpClient: HttpClient) { }
 
     createPessoa(pessoa) {
-    return this.httpClient.post(AppSettings.API_ENDPOINT+"pessoa", pessoa)
+    return this.httpClient.post(this.urlPessoa, pessoa)
                           .map((response: Response) => response.json());
 
     }
 
     getPessoas() {
-    return this.httpClient.get(AppSettings.API_ENDPOINT)
+    return this.httpClient.get(this.urlPessoa)
                           .map((response: Response) => response.json());
     }
 
