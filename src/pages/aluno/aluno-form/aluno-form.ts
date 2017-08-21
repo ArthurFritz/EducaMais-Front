@@ -33,7 +33,7 @@ export class AlunoFormPage {
 
   salvar(){
       var request = this.form.value;
-      request.foto = this.fotoPreview;
+      request.foto = this.fotoPreview.replace("data:image/jpeg;base64,","");
       this.loader.present();
       this.pessoaService.createPessoa(request).subscribe(suc=>{
         this.navCtrl.pop();
