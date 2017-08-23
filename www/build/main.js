@@ -6,7 +6,7 @@ webpackJsonp([1],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -26,7 +26,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Início</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Ionic Menu Starter</h3>\n\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.\n  </p>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n  <button ion-button color="secondary" menuToggle>Secondary</button>\n  \n</ion-content>\n'/*ion-inline-end:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Início</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Ionic Menu Starter</h3>\n\n\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.\n\n  </p>\n\n\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n\n  <button ion-button color="secondary" menuToggle>Secondary</button>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
 ], HomePage);
@@ -41,10 +41,10 @@ HomePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PessoaService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__HttpClient__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__HttpClient__ = __webpack_require__(255);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,7 +126,7 @@ webpackEmptyAsyncContext.id = 141;
 
 var map = {
 	"../pages/login/login.module": [
-		574,
+		575,
 		0
 	]
 };
@@ -150,66 +150,10 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ListPage = ListPage_1 = (function () {
-    function ListPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        // If we navigated to this page, we will have an item available as a nav param
-        this.selectedItem = navParams.get('item');
-        // Let's populate this page with some filler content for funzies
-        this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-            'american-football', 'boat', 'bluetooth', 'build'];
-        this.items = [];
-        for (var i = 1; i < 11; i++) {
-            this.items.push({
-                title: 'Item ' + i,
-                note: 'This is item #' + i,
-                icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-            });
-        }
-    }
-    ListPage.prototype.itemTapped = function (event, item) {
-        // That's right, we're pushing to ourselves!
-        this.navCtrl.push(ListPage_1, {
-            item: item
-        });
-    };
-    return ListPage;
-}());
-ListPage = ListPage_1 = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-list',template:/*ion-inline-start:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\list\list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-right>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\list\list.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-], ListPage);
-
-var ListPage_1;
-//# sourceMappingURL=list.js.map
-
-/***/ }),
-
-/***/ 230:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlunoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aluno_form_aluno_form__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__aluno_form_aluno_form__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pessoa_service__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_settings__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -264,7 +208,7 @@ var AlunoPage = (function () {
 }());
 AlunoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-aluno',template:/*ion-inline-start:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\aluno\aluno.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Alunos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-fab bottom right>\n\n        <button ion-fab (click)="newAluno()"><ion-icon name="add"></ion-icon></button>\n\n    </ion-fab>\n\n    <ion-list>\n\n        <button *ngFor="let item of listPessoas" ion-item (click)="editAluno(item)">\n\n        <ion-thumbnail item-start>\n\n            <img src="{{urlFoto(item.foto)}}" onerror="this.src=\'assets/img/educa_logo.svg\'">\n\n        </ion-thumbnail>\n\n        <ion-icon item-left></ion-icon>\n\n            {{item.nome}} <br/>\n\n            {{item.email}}\n\n        <div class="item-note" item-right>\n\n            {{item.instituicao}} <br>\n\n            {{item.nascimento | date:\'d/M/y\'}} <br>\n\n        </div>\n\n        <div>{{item.observacao}}</div>\n\n        </button>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\aluno\aluno.html"*/
+        selector: 'page-aluno',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\aluno\aluno.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Alunos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-fab bottom right>\n\n        <button ion-fab (click)="newAluno()"><ion-icon name="add"></ion-icon></button>\n\n    </ion-fab>\n\n    <ion-list>\n\n        <button *ngFor="let item of listPessoas" ion-item (click)="editAluno(item)">\n\n        <ion-thumbnail item-start>\n\n            <img src="{{urlFoto(item.foto)}}" onerror="this.src=\'assets/img/educa_logo.svg\'">\n\n        </ion-thumbnail>\n\n        <ion-icon item-left></ion-icon>\n\n            {{item.nome}} <br/>\n\n            {{item.email}}\n\n        <div class="item-note" item-right>\n\n            {{item.instituicao}} <br>\n\n            {{item.nascimento | date:\'d/M/y\'}} <br>\n\n        </div>\n\n        <div>{{item.observacao}}</div>\n\n        </button>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\aluno\aluno.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_pessoa_service__["a" /* PessoaService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
 ], AlunoPage);
@@ -273,15 +217,15 @@ AlunoPage = __decorate([
 
 /***/ }),
 
-/***/ 231:
+/***/ 230:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlunoFormPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_pessoa_service__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_settings__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -408,7 +352,7 @@ var AlunoFormPage = (function () {
 }());
 AlunoFormPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-aluno-form',template:/*ion-inline-start:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\aluno\aluno-form\aluno-form.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Informações Aluno</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <div padding text-center>\n\n        <img class="fotoPessoa" *ngIf="fotoPreview" src="{{fotoPreview}}" (click)="tirarFoto(fileInput)" onerror="this.src=\'assets/img/educa_logo.svg\'">\n\n        <span class="editarFoto" *ngIf="fotoPreview" (click)="tirarFoto(fileInput)">Alterar Foto</span>\n\n        <input #fileInput type="file" style="display:none" accept="image/*" (change)="handleFileSelect($event)">\n\n        <button ion-button icon-left color="primary" *ngIf="!fotoPreview" (click)="tirarFoto(fileInput)"><ion-icon name="camera"></ion-icon> Foto </button>\n\n    </div>\n\n    <form [formGroup]="form">\n\n        <ion-list>\n\n            <ion-item>\n\n                <ion-label floating>Nome</ion-label>\n\n                <ion-input formControlName="nome" type="text" value=""></ion-input>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Nascimento</ion-label>\n\n                <ion-datetime formControlName="nascimento" displayFormat="DD/MM/YYYY"></ion-datetime>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>E-mail</ion-label>\n\n                <ion-input formControlName="email" type="email" value=""></ion-input>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Observacao</ion-label>\n\n                <ion-input formControlName="observacao" type="text" value=""></ion-input>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Instituicao</ion-label>\n\n                <ion-input formControlName="instituicao" type="text" value=""></ion-input>\n\n            </ion-item>\n\n        </ion-list>\n\n    </form>\n\n    <div padding text-center>\n\n      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Salvar </button>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\aluno\aluno-form\aluno-form.html"*/
+        selector: 'page-aluno-form',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\aluno\aluno-form\aluno-form.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Informações Aluno</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <div padding text-center>\n\n        <img class="fotoPessoa" *ngIf="fotoPreview" src="{{fotoPreview}}" (click)="tirarFoto(fileInput)" onerror="this.src=\'assets/img/educa_logo.svg\'">\n\n        <span class="editarFoto" *ngIf="fotoPreview" (click)="tirarFoto(fileInput)">Alterar Foto</span>\n\n        <input #fileInput type="file" style="display:none" accept="image/*" (change)="handleFileSelect($event)">\n\n        <button ion-button icon-left color="primary" *ngIf="!fotoPreview" (click)="tirarFoto(fileInput)"><ion-icon name="camera"></ion-icon> Foto </button>\n\n    </div>\n\n    <form [formGroup]="form">\n\n        <ion-list>\n\n            <ion-item>\n\n                <ion-label floating>Nome</ion-label>\n\n                <ion-input formControlName="nome" type="text" value=""></ion-input>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Nascimento</ion-label>\n\n                <ion-datetime formControlName="nascimento" displayFormat="DD/MM/YYYY"></ion-datetime>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>E-mail</ion-label>\n\n                <ion-input formControlName="email" type="email" value=""></ion-input>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Observacao</ion-label>\n\n                <ion-input formControlName="observacao" type="text" value=""></ion-input>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Instituicao</ion-label>\n\n                <ion-input formControlName="instituicao" type="text" value=""></ion-input>\n\n            </ion-item>\n\n        </ion-list>\n\n    </form>\n\n    <div padding text-center>\n\n      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Salvar </button>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\aluno\aluno-form\aluno-form.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */], __WEBPACK_IMPORTED_MODULE_4__services_pessoa_service__["a" /* PessoaService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
 ], AlunoFormPage);
@@ -417,17 +361,17 @@ AlunoFormPage = __decorate([
 
 /***/ }),
 
-/***/ 256:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpClient; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -540,13 +484,114 @@ HttpClient = __decorate([
 
 /***/ }),
 
+/***/ 257:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiarioPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DiarioPage = (function () {
+    function DiarioPage(navCtrl, fb, navParams, alert) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alert = alert;
+        this.mapCursoTime = { 'ingles': '599d080afa90e0fc50acd013', 'informatica': '599d097e6177f846cbbf7ddb' };
+        this.form = fb.group({
+            'data': new Date().toISOString(),
+            'curso': 'ingles'
+        });
+        this.validaBoard();
+    }
+    DiarioPage.prototype.autorizar = function (then, error) {
+        Trello.authorize({
+            type: "popup",
+            interactive: "true",
+            name: "EducaMais",
+            scope: { read: "true", write: "true" },
+            expiration: "never",
+            success: then.bind(this),
+            error: error.bind(this)
+        });
+    };
+    DiarioPage.prototype.salvar = function () {
+        var _this = this;
+        this.autorizar(function () {
+            Trello.post('/boards', {
+                'name': _this.criaNomeBoard(),
+                'defaultLists': false,
+                'idOrganization': _this.getIdOrganization()
+            }, _this.criaListas.bind(_this));
+        }, function (err) { return console.log(err); });
+    };
+    DiarioPage.prototype.criaListas = function () {
+    };
+    DiarioPage.prototype.validaBoard = function () {
+        var _this = this;
+        this.autorizar(function () {
+            Trello.get('organizations/' + _this.getIdOrganization() + '/boards', function (boards) {
+                for (var _i = 0, boards_1 = boards; _i < boards_1.length; _i++) {
+                    var board = boards_1[_i];
+                    if (board.name == _this.criaNomeBoard()) {
+                        _this.alertAbrirBoard(board.url);
+                        break;
+                    }
+                }
+            });
+        }, function (err) { return console.log(err); });
+    };
+    DiarioPage.prototype.alertAbrirBoard = function (url) {
+        var alert = this.alert.create({
+            title: 'Diário de hoje',
+            message: 'já existe um board criado, deseja visualizar?',
+            buttons: [{ text: 'Sim', handler: function () { window.open(url, '_system'); } },
+                { text: 'Nope', role: 'cancel' }]
+        });
+        alert.present();
+    };
+    DiarioPage.prototype.criaNomeBoard = function () {
+        var data = new Date(this.form.value.data);
+        var curso = this.form.value.curso;
+        return "[" + data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + "] Aula de " + curso;
+    };
+    DiarioPage.prototype.getIdOrganization = function () {
+        return this.mapCursoTime[this.form.value.curso];
+    };
+    return DiarioPage;
+}());
+DiarioPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-diario-form',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\diario\diario-form.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Diário de sala</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <form [formGroup]="form">\n\n        <ion-list>\n\n            <ion-item>\n\n                <ion-label floating>Data</ion-label>\n\n                <ion-datetime formControlName="data" displayFormat="DD/MM/YYYY">{{data}}</ion-datetime>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Curso</ion-label>\n\n                <ion-select formControlName="curso">\n\n                    <ion-option value="ingles">Inglês</ion-option>\n\n                    <ion-option value="info">Informática</ion-option>\n\n                </ion-select>\n\n            </ion-item>\n\n        </ion-list>\n\n    </form>\n\n    <div padding text-center>\n\n      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Criar </button>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\diario\diario-form.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+], DiarioPage);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=diario.js.map
+
+/***/ }),
+
 /***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -594,7 +639,7 @@ var LoginPage = (function () {
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\login\login.html"*/'<ion-content>\n    <p padding text-center>\n      <img width="50%" src="assets/img/educa_logo.svg"/>      \n    </p>\n    <form [formGroup]="form">\n      <ion-list>\n        <ion-item>\n          <ion-label floating>Usuário</ion-label>\n          <ion-input formControlName="username" type="text" value=""></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label floating>Senha</ion-label>\n          <ion-input formControlName="password" type="password" value=""></ion-input>\n        </ion-item>\n      </ion-list>\n    </form>\n    <div padding text-center>\n      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="logar()"><ion-icon name="key"></ion-icon> Entrar </button>\n    </div>\n</ion-content>'/*ion-inline-end:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\pages\login\login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\login\login.html"*/'<ion-content>\n\n    <p padding text-center>\n\n      <img width="50%" src="assets/img/educa_logo.svg"/>      \n\n    </p>\n\n    <form [formGroup]="form">\n\n      <ion-list>\n\n        <ion-item>\n\n          <ion-label floating>Usuário</ion-label>\n\n          <ion-input formControlName="username" type="text" value=""></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating>Senha</ion-label>\n\n          <ion-input formControlName="password" type="password" value=""></ion-input>\n\n        </ion-item>\n\n      </ion-list>\n\n    </form>\n\n    <div padding text-center>\n\n      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="logar()"><ion-icon name="key"></ion-icon> Entrar </button>\n\n    </div>\n\n</ion-content>'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
 ], LoginPage);
@@ -624,26 +669,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(573);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_aluno_aluno__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_aluno_aluno_form_aluno_form__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_http__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_HttpClient__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_pessoa_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_camera__ = __webpack_require__(232);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_photo_library__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_aluno_aluno__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_aluno_aluno_form_aluno_form__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_diario_diario__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_HttpClient__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_pessoa_service__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_photo_library__ = __webpack_require__(574);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -673,11 +720,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_7__pages_aluno_aluno__["a" /* AlunoPage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_aluno_aluno_form_aluno_form__["a" /* AlunoFormPage */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_aluno_aluno_form_aluno_form__["a" /* AlunoFormPage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_diario_diario__["a" /* DiarioPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_9__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_10__angular_http__["c" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
@@ -691,16 +739,17 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_7__pages_aluno_aluno__["a" /* AlunoPage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_aluno_aluno_form_aluno_form__["a" /* AlunoFormPage */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_aluno_aluno_form_aluno_form__["a" /* AlunoFormPage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_diario_diario__["a" /* DiarioPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_14__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_15__ionic_native_photo_library__["a" /* PhotoLibrary */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_16__ionic_native_photo_library__["a" /* PhotoLibrary */],
             { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_10__services_HttpClient__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_11__services_pessoa_service__["a" /* PessoaService */]
+            __WEBPACK_IMPORTED_MODULE_11__services_HttpClient__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_12__services_pessoa_service__["a" /* PessoaService */]
         ]
     })
 ], AppModule);
@@ -715,12 +764,12 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_aluno_aluno__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_aluno_aluno__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_diario_diario__ = __webpack_require__(257);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -743,13 +792,13 @@ var MyApp = (function () {
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
         //rootPage: any = LoginPage;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_aluno_aluno__["a" /* AlunoPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_aluno_aluno__["a" /* AlunoPage */];
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Início', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: 'Alunos', component: __WEBPACK_IMPORTED_MODULE_6__pages_aluno_aluno__["a" /* AlunoPage */] },
-            { title: 'List', component: __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */] }
+            { title: 'Alunos', component: __WEBPACK_IMPORTED_MODULE_5__pages_aluno_aluno__["a" /* AlunoPage */] },
+            { title: 'Aulas', component: __WEBPACK_IMPORTED_MODULE_6__pages_diario_diario__["a" /* DiarioPage */] }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -773,12 +822,68 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title padding text-center >\n        <img width="60%" src="assets/img/educa_logo.svg"/>\n        </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"D:\Documentos\Clientes\Matera\EducaMais-Front\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title padding text-center >\n\n        <img width="60%" src="assets/img/educa_logo.svg"/>\n\n        </ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 573:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ListPage = ListPage_1 = (function () {
+    function ListPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        // If we navigated to this page, we will have an item available as a nav param
+        this.selectedItem = navParams.get('item');
+        // Let's populate this page with some filler content for funzies
+        this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+            'american-football', 'boat', 'bluetooth', 'build'];
+        this.items = [];
+        for (var i = 1; i < 11; i++) {
+            this.items.push({
+                title: 'Item ' + i,
+                note: 'This is item #' + i,
+                icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+            });
+        }
+    }
+    ListPage.prototype.itemTapped = function (event, item) {
+        // That's right, we're pushing to ourselves!
+        this.navCtrl.push(ListPage_1, {
+            item: item
+        });
+    };
+    return ListPage;
+}());
+ListPage = ListPage_1 = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-list',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\list\list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n\n      {{item.title}}\n\n      <div class="item-note" item-right>\n\n        {{item.note}}\n\n      </div>\n\n    </button>\n\n  </ion-list>\n\n  <div *ngIf="selectedItem" padding>\n\n    You navigated here from <b>{{selectedItem.title}}</b>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\list\list.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+], ListPage);
+
+var ListPage_1;
+//# sourceMappingURL=list.js.map
 
 /***/ })
 

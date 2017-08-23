@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Diário de sala</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <form [formGroup]="form">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Data</ion-label>
+                <ion-datetime formControlName="data" displayFormat="DD/MM/YYYY">{{data}}</ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Curso</ion-label>
+                <ion-select formControlName="curso">
+                    <ion-option value="ingles">Inglês</ion-option>
+                    <ion-option value="info">Informática</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+    </form>
+    <div padding text-center>
+      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Criar </button>
+    </div>
+</ion-content>
