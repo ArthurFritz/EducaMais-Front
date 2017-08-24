@@ -10,6 +10,8 @@ export class UserService {
     
     constructor(private http: Http, private httpClient: HttpClient) { }
 
+    private urlUser = AppSettings.API_ENDPOINT+"user/";
+
     loginUser(user) {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         const body = new URLSearchParams();
@@ -22,13 +24,18 @@ export class UserService {
     }
 
     createUser(user: any) {
-    return this.httpClient.post(AppSettings.API_ENDPOINT+"user", user)
+    return this.httpClient.post(this.urlUser, user)
                           .map((response: Response) => response.json());
 
     }
+
+    updateUser(user,id){
+        return this.httpClient.put(this.urlUser, id , user)
+                              .map((response: Response) => response.json());
+    }
     
     getUser() {
-    return this.httpClient.get(AppSettings.API_ENDPOINT+"user")
+    return this.httpClient.get(this.urlUser)
                           .map((response: Response) => response.json());
     }
 

@@ -10,6 +10,7 @@ import { AlunoFormPage } from "../pages/aluno/aluno-form/aluno-form";
 import { DiarioPage } from '../pages/diario/diario';
 
 import { LoginPageModule } from '../pages/login/login.module';
+import { ProfessorModule } from '../pages/professor/professor.module'
 
 import {HttpModule} from '@angular/http';
 import {HttpClient} from '../services/HttpClient';
@@ -33,6 +34,7 @@ import { PhotoLibrary } from '@ionic-native/photo-library';
     BrowserModule,
     HttpModule,
     LoginPageModule,
+    ProfessorModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],

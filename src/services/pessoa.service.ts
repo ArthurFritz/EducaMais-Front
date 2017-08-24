@@ -27,5 +27,8 @@ export class PessoaService {
                           .map((response: Response) => response.json());
     }
 
-
+    getProfessores() {
+    return this.httpClient.get(this.urlPessoa+"professor")
+                          .map((response: Response) => response.json());
+    }
 }

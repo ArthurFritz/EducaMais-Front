@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Informações Professor</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <div padding text-center>
+        <img class="fotoPessoa" *ngIf="fotoPreview" src="{{fotoPreview}}" (click)="tirarFoto(fileInput)" onerror="this.src='assets/img/educa_logo.svg'">
+        <span class="editarFoto" *ngIf="fotoPreview" (click)="tirarFoto(fileInput)">Alterar Foto</span>
+        <input #fileInput type="file" style="display:none" accept="image/*" (change)="handleFileSelect($event)">
+        <button ion-button icon-left color="primary" *ngIf="!fotoPreview" (click)="tirarFoto(fileInput)"><ion-icon name="camera"></ion-icon> Foto </button>
+    </div>
+    <form [formGroup]="form">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Nome</ion-label>
+                <ion-input formControlName="nome" type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Usuário</ion-label>
+                <ion-input formControlName="login" type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Senha</ion-label>
+                <ion-input formControlName="senha" type="password" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Nascimento</ion-label>
+                <ion-datetime formControlName="nascimento" displayFormat="DD/MM/YYYY"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>E-mail</ion-label>
+                <ion-input formControlName="email" type="email" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Observacao</ion-label>
+                <ion-input formControlName="observacao" type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Instituicao</ion-label>
+                <ion-input formControlName="instituicao" type="text" value=""></ion-input>
+            </ion-item>
+        </ion-list>
+    </form>
+    <div padding text-center>
+      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Salvar </button>
+    </div>
+</ion-content>
