@@ -133,7 +133,7 @@ export class DiarioPage {
  criaNomeBoard() {
   var data = new Date(this.form.value.data);
   var curso = this.form.value.curso;
-  return "[" + data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear() + "] Aula de " + curso;
+  return "[" + data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear() + "] Aula de " + curso;
  }
 
  getIdOrganization() {
