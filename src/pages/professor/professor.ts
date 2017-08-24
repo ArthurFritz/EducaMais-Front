@@ -10,7 +10,7 @@ import { AppSettings } from "../../app.settings";
 })
 export class ProfessorPage {
 
-  public listPessoas:[any];
+  public listPessoas:any[];
   private loader:Loading;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private pessoaService:PessoaService, public loadingCtrl: LoadingController) {}
@@ -30,14 +30,16 @@ export class ProfessorPage {
   urlFoto(foto){
     return AppSettings.API_ENDPOINT+'foto/'+foto;
   }
-
+  
   private carregarProfessores = () => {
     this.loader = this.loadingCtrl.create({
       content: "Aguarde..."
     });
     this.loader.present();
     this.pessoaService.getProfessores().subscribe(suc=>{
-      this.listPessoas = suc;
+      if(Array.isArray(suc)){
+        this.listPessoas = suc;
+      }
       this.loader.dismiss();
     }, 
     err=>{
