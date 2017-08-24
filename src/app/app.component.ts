@@ -4,10 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { AlunoPage } from "../pages/aluno/aluno";
 import { DiarioPage } from "../pages/diario/diario";
+import { ProfessorPage } from "../pages/professor/professor";
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +27,8 @@ export class MyApp {
     this.pages = [
       { title: 'Início', component: HomePage },
       { title: 'Alunos', component: AlunoPage },
-      { title: 'Aulas', component: DiarioPage }
+      { title: 'Aulas', component: DiarioPage },
+      { title: 'Professor', component: ProfessorPage }
     ];
 
   }
