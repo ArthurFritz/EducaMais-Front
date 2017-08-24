@@ -8,7 +8,6 @@ import {HttpClient} from './HttpClient';
 export class PessoaService {
     
     private urlPessoa = AppSettings.API_ENDPOINT+"pessoa/"; 
-    private urlFoto = AppSettings.API_ENDPOINT+"foto/";
 
     constructor(private httpClient: HttpClient) { }
 
@@ -27,5 +26,8 @@ export class PessoaService {
                           .map((response: Response) => response.json());
     }
 
-
+    getProfessores() {
+    return this.httpClient.get(this.urlPessoa+"professor")
+                          .map((response: Response) => response.json());
+    }
 }
