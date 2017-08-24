@@ -14,6 +14,7 @@ import { ProfessorModule } from '../pages/professor/professor.module'
 import {HttpModule} from '@angular/http';
 import {HttpClient} from '../services/HttpClient';
 import {PessoaService} from '../services/pessoa.service';
+import {UserService} from '../services/user.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,7 +51,8 @@ import { PhotoLibrary } from '@ionic-native/photo-library';
     PhotoLibrary,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpClient,
-    PessoaService
+    PessoaService,
+    UserService
   ]
 })
 export class AppModule {}
