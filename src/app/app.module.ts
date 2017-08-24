@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { AlunoPage } from '../pages/aluno/aluno';
 import { AlunoFormPage } from "../pages/aluno/aluno-form/aluno-form";
 import { DiarioPage } from '../pages/diario/diario';
@@ -18,14 +17,13 @@ import {PessoaService} from '../services/pessoa.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Camera,CameraOptions} from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
 import { PhotoLibrary } from '@ionic-native/photo-library';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     AlunoPage,
     AlunoFormPage,
     DiarioPage
@@ -41,7 +39,6 @@ import { PhotoLibrary } from '@ionic-native/photo-library';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     AlunoPage,
     AlunoFormPage,
     DiarioPage

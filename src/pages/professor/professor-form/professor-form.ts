@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { Camera,CameraOptions} from '@ionic-native/camera';
 import { PessoaService } from '../../../services/pessoa.service';
-import { LoadingController, Loading, IonicPage } from 'ionic-angular';
+import { LoadingController, Loading } from 'ionic-angular';
 import { AppSettings } from "../../../app.settings";
 import { UserService } from "../../../services/user.service";
 

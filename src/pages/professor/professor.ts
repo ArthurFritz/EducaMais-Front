@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Loading, LoadingController, IonicPage } from 'ionic-angular';
+import { NavController, NavParams, Loading, LoadingController } from 'ionic-angular';
 import { ProfessorFormPage } from "./professor-form/professor-form";
 import {PessoaService} from '../../services/pessoa.service';
 import { AppSettings } from "../../app.settings";
@@ -16,7 +16,7 @@ export class ProfessorPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private pessoaService:PessoaService, public loadingCtrl: LoadingController) {}
 
   ionViewCanEnter(): boolean {
-    this.carregarAlunos();
+    this.carregarProfessores();
     return true;
   }
 
@@ -31,7 +31,7 @@ export class ProfessorPage {
     return AppSettings.API_ENDPOINT+'foto/'+foto;
   }
 
-  private carregarAlunos = () => {
+  private carregarProfessores = () => {
     this.loader = this.loadingCtrl.create({
       content: "Aguarde..."
     });
@@ -42,7 +42,7 @@ export class ProfessorPage {
     }, 
     err=>{
       this.loader.dismiss();
-      alert("Ocorreu um erro ao carregar os alunos");
+      alert("Ocorreu um erro ao carregar os professores");
     })
   }
 

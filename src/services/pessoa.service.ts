@@ -8,7 +8,6 @@ import {HttpClient} from './HttpClient';
 export class PessoaService {
     
     private urlPessoa = AppSettings.API_ENDPOINT+"pessoa/"; 
-    private urlFoto = AppSettings.API_ENDPOINT+"foto/";
 
     constructor(private httpClient: HttpClient) { }
 
