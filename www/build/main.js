@@ -492,6 +492,8 @@ HttpClient = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pessoa_service__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_settings__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -505,18 +507,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var DiarioPage = (function () {
-    function DiarioPage(navCtrl, fb, navParams, alert) {
+    function DiarioPage(navCtrl, alert, loadingCtrl, navParams, pessoaService, fb) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
         this.alert = alert;
+        this.loadingCtrl = loadingCtrl;
+        this.navParams = navParams;
+        this.pessoaService = pessoaService;
         this.mapCursoTime = { 'ingles': '599d080afa90e0fc50acd013', 'informatica': '599d097e6177f846cbbf7ddb' };
         this.form = fb.group({
             'data': new Date().toISOString(),
             'curso': 'ingles'
         });
         this.validaBoard();
+        this.loading = this.loadingCtrl.create({
+            content: 'Criando Board...'
+        });
     }
+    DiarioPage.prototype.salvar = function () {
+        var _this = this;
+        this.validaBoard();
+        this.autorizar(function () {
+            _this.loading.present();
+            Trello.post('/boards', {
+                'name': _this.criaNomeBoard(),
+                'defaultLists': false,
+                'idOrganization': _this.getIdOrganization()
+            }, _this.criaListas.bind(_this));
+        }, function (err) { return console.log(err); });
+    };
     DiarioPage.prototype.autorizar = function (then, error) {
         Trello.authorize({
             type: "popup",
@@ -528,17 +549,54 @@ var DiarioPage = (function () {
             error: error.bind(this)
         });
     };
-    DiarioPage.prototype.salvar = function () {
+    DiarioPage.prototype.criaListas = function (board) {
         var _this = this;
-        this.autorizar(function () {
-            Trello.post('/boards', {
-                'name': _this.criaNomeBoard(),
-                'defaultLists': false,
-                'idOrganization': _this.getIdOrganization()
-            }, _this.criaListas.bind(_this));
-        }, function (err) { return console.log(err); });
+        this.board = board.url;
+        Promise.all([
+            this.post('/lists', {
+                'name': 'Alunos',
+                'idBoard': board.id,
+                'pos': 1
+            }),
+            this.post('/lists', {
+                'name': 'Faltaram',
+                'idBoard': board.id,
+                'pos': 2
+            }),
+            this.post('/lists', {
+                'name': 'Anotações',
+                'idBoard': board.id,
+                'pos': 3
+            }),
+        ]).then(function (lists) {
+            _this.incluiAlunos(lists[0]);
+        });
     };
-    DiarioPage.prototype.criaListas = function () {
+    DiarioPage.prototype.incluiAlunos = function (list) {
+        var _this = this;
+        this.pessoaService.getPessoas().subscribe(function (pessoas) {
+            var promises = [];
+            for (var _i = 0, pessoas_1 = pessoas; _i < pessoas_1.length; _i++) {
+                var pessoa = pessoas_1[_i];
+                promises.push(_this.incluiAluno(list.id, pessoa));
+            }
+            Promise.all(promises).then(function (cards) {
+                window.open(_this.board);
+                _this.loading.dismiss();
+            });
+        });
+    };
+    DiarioPage.prototype.incluiAluno = function (idList, pessoa) {
+        return new Promise(function (suc) {
+            Trello.post('/cards', {
+                'name': pessoa.nome,
+                'idList': idList
+            }, function (card) {
+                Trello.post('/cards/' + card.id + '/attachments', {
+                    'url': __WEBPACK_IMPORTED_MODULE_4__app_settings__["a" /* AppSettings */].API_ENDPOINT + 'foto/' + pessoa.foto
+                }, suc);
+            });
+        });
     };
     DiarioPage.prototype.validaBoard = function () {
         var _this = this;
@@ -566,10 +624,15 @@ var DiarioPage = (function () {
     DiarioPage.prototype.criaNomeBoard = function () {
         var data = new Date(this.form.value.data);
         var curso = this.form.value.curso;
-        return "[" + data.getDay() + "/" + data.getMonth() + "/" + data.getFullYear() + "] Aula de " + curso;
+        return "[" + data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear() + "] Aula de " + curso;
     };
     DiarioPage.prototype.getIdOrganization = function () {
         return this.mapCursoTime[this.form.value.curso];
+    };
+    DiarioPage.prototype.post = function (url, object) {
+        return new Promise(function (suc) {
+            Trello.post(url, object, suc);
+        });
     };
     return DiarioPage;
 }());
@@ -577,10 +640,10 @@ DiarioPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-diario-form',template:/*ion-inline-start:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\diario\diario-form.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Diário de sala</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <form [formGroup]="form">\n\n        <ion-list>\n\n            <ion-item>\n\n                <ion-label floating>Data</ion-label>\n\n                <ion-datetime formControlName="data" displayFormat="DD/MM/YYYY">{{data}}</ion-datetime>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-label floating>Curso</ion-label>\n\n                <ion-select formControlName="curso">\n\n                    <ion-option value="ingles">Inglês</ion-option>\n\n                    <ion-option value="info">Informática</ion-option>\n\n                </ion-select>\n\n            </ion-item>\n\n        </ion-list>\n\n    </form>\n\n    <div padding text-center>\n\n      <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()"><ion-icon name="cloud-done"></ion-icon> Criar </button>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\tools\cygwin64\home\Yan\EducaMais-Front\src\pages\diario\diario-form.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_pessoa_service__["a" /* PessoaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_pessoa_service__["a" /* PessoaService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _f || Object])
 ], DiarioPage);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=diario.js.map
 
 /***/ }),
