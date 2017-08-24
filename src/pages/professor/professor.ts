@@ -10,7 +10,7 @@ import { AppSettings } from "../../app.settings";
 })
 export class ProfessorPage {
 
-  public listPessoas:any[];
+  public listProfessor:any[];
   private loader:Loading;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private pessoaService:PessoaService, public loadingCtrl: LoadingController) {}
@@ -37,9 +37,7 @@ export class ProfessorPage {
     });
     this.loader.present();
     this.pessoaService.getProfessores().subscribe(suc=>{
-      if(Array.isArray(suc)){
-        this.listPessoas = suc;
-      }
+      this.listProfessor = suc;
       this.loader.dismiss();
     }, 
     err=>{

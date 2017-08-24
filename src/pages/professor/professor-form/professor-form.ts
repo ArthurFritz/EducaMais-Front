@@ -18,7 +18,7 @@ export class ProfessorFormPage {
   private loader:Loading;
   private isEdit:boolean=false;
   private idUpdate;
-
+  private idUser;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
@@ -42,18 +42,21 @@ export class ProfessorFormPage {
     setTimeout(()=>{
       if(item){
         this.form.setValue({
-          nome : item.nome,
-          email : item.email,
-          nascimento : item.nascimento,
-          observacao : item.observacao,
-          instituicao : item.instituicao,
+          nome : item.pessoa.nome,
+          email : item.pessoa.email,
+          nascimento : item.pessoa.nascimento,
+          observacao : item.pessoa.observacao,
+          instituicao : item.pessoa.instituicao,
           foto : '',
-          login : '',
+          login : item.login,
           senha : ''
         })
         this.isEdit=true;
-        this.idUpdate = item._id;
+        this.idUpdate = item.pessoa._id;
+        this.idUser = item._id;
         this.fotoPreview = AppSettings.API_ENDPOINT+'foto/'+item.foto;
+        this.form.get("senha").setValidators(null);
+        this.form.get("senha").reset();
       }
     },1)
 
@@ -103,7 +106,10 @@ export class ProfessorFormPage {
   private updatePessoa(request){
     this.pessoaService.updatePessoa(request,this.idUpdate).subscribe(suc=>{
       request.pessoa = suc._id;
-      this.userService.updateUser(request, this.idUpdate).subscribe(suc=>{
+      if(!request.senha || request.senha==""){
+        delete request.senha;
+      }
+      this.userService.updateUser(request, this.idUser).subscribe(suc=>{
           this.navCtrl.pop();
           this.loader.dismiss();
         },
