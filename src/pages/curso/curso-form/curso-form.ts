@@ -22,22 +22,28 @@ export class CursoFormPage {
     var item = navParams.get("item");
     this.form = fb.group({
       'nome': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      'email': [''],
-      'nascimento': [''],
-      'observacao': [''],
-      'instituicao': [''],
-      'foto': [''],
+      'referencia': [''],
+      'horas': [''],
+      'media': [''],
+      'frequencia': [''],
+      'inicio': [''],
+      'alunos': [''],
+      'diasAula': [''],
+      'createAt': [''],
     });
 
     setTimeout(()=>{
       if(item){
         this.form.setValue({
           nome : item.nome,
-          email : item.email,
-          nascimento : item.nascimento,
-          observacao : item.observacao,
-          instituicao : item.instituicao,
-          foto : ''
+          referencia : item.referencia,
+          horas : item.horas,
+          media : item.media,
+          frequencia : item.frequencia,
+          inicio : item.inicio,
+          alunos : item.alunos,
+          diasAula : item.diasAula,
+          createAt : item.createAt
         })
         this.isEdit=true;
         this.idUpdate = item._id;
