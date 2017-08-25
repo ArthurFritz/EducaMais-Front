@@ -10,7 +10,8 @@ import { DiarioPage } from '../pages/diario/diario';
 import { CursoPage } from "../pages/curso/curso";
 
 import { LoginPageModule } from '../pages/login/login.module';
-import { ProfessorModule } from '../pages/professor/professor.module'
+import { ProfessorModule } from '../pages/professor/professor.module';
+import { CursoModule } from '../pages/curso/curso.module';
 
 import {HttpModule} from '@angular/http';
 import {HttpClient} from '../services/HttpClient';
@@ -37,6 +38,7 @@ import { PhotoLibrary } from '@ionic-native/photo-library';
     HttpModule,
     LoginPageModule,
     ProfessorModule,
+    CursoModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
