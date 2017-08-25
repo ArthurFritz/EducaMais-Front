@@ -8,6 +8,7 @@ import {AlunoPage} from '../pages/aluno/aluno';
 import {AlunoFormPage} from "../pages/aluno/aluno-form/aluno-form";
 import {DiarioPage} from '../pages/diario/diario';
 import {CursoPage} from "../pages/curso/curso";
+import {CursoFormPage} from "../pages/curso/curso-form/curso-form";
 
 import {LoginPageModule} from '../pages/login/login.module';
 import {ProfessorModule} from '../pages/professor/professor.module';
@@ -30,7 +31,8 @@ import {PhotoLibrary} from '@ionic-native/photo-library';
     AlunoPage,
     AlunoFormPage,
     DiarioPage,
-    CursoPage
+    CursoPage,
+    CursoFormPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {PhotoLibrary} from '@ionic-native/photo-library';
     AlunoPage,
     AlunoFormPage,
     DiarioPage,
-    CursoPage
+    CursoPage,
+    CursoFormPage
   ],
   providers: [
     StatusBar,
