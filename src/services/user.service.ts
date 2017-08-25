@@ -11,14 +11,8 @@ export class UserService {
 
     private urlUser = AppSettings.API_ENDPOINT+"user/";
 
-    loginUser(user) {
-        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        const body = new URLSearchParams();
-        body.set('username', user.username);
-        body.set('password', user.password);
-        body.set('grant_type', 'password');
-        let options = new RequestOptions({ headers: headers });
-        return this.http.post(AppSettings.API_OAUTH,  body.toString() , options)
+    loginJson(user) {
+        return this.httpClient.post(this.urlUser+"login",  user)
                         .map((response: Response) => response.json());
     }
 
