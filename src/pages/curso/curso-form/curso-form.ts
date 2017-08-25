@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Loading, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Camera, CameraOptions} from '@ionic-native/camera';
-import {PessoaService} from '../../../services/pessoa.service';
+import {CursoService} from '../../../services/curso.service';
 import {AppSettings} from "../../../app.settings";
 
 @Component({
@@ -18,7 +18,7 @@ export class CursoFormPage {
   private idUpdate;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, fb:FormBuilder,private camera: Camera,private pessoaService: PessoaService, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, fb:FormBuilder,private camera: Camera,private cursoService: CursoService, public loadingCtrl: LoadingController) {
     var item = navParams.get("item");
     this.form = fb.group({
       'nome': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
@@ -59,19 +59,19 @@ export class CursoFormPage {
         }else{
           delete request.foto;
         }
-        this.updatePessoa(request);
+        this.updateCurso(request);
       }else{
         if(this.fotoPreview){
           request.foto = this.fotoPreview.replace("data:image/jpeg;base64,","");
         }else{
           delete request.foto;
         }
-        this.createPessoa(request);
+        this.createCurso(request);
       }
   }
 
-  private createPessoa(request){
-    this.pessoaService.createPessoa(request).subscribe(suc=>{
+  private createCurso(request){
+    this.cursoService.createCurso(request).subscribe(suc=>{
       this.navCtrl.pop();
       this.loader.dismiss();
     },error=>{
@@ -79,8 +79,8 @@ export class CursoFormPage {
     })
   }
 
-  private updatePessoa(request){
-    this.pessoaService.updatePessoa(request,this.idUpdate).subscribe(suc=>{
+  private updateCurso(request){
+    this.cursoService.updateCurso(request,this.idUpdate).subscribe(suc=>{
       this.navCtrl.pop();
       this.loader.dismiss();
     },error=>{

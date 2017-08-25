@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content>
   <div padding text-center>
-    <img class="fotoPessoa" *ngIf="fotoPreview" src="{{fotoPreview}}" (click)="tirarFoto(fileInput)" onerror="this.src='assets/img/educa_logo.svg'">
+    <img class="fotoCurso" *ngIf="fotoPreview" src="{{fotoPreview}}" (click)="tirarFoto(fileInput)" onerror="this.src='assets/img/educa_logo.svg'">
     <span class="editarFoto" *ngIf="fotoPreview" (click)="tirarFoto(fileInput)">Alterar Foto</span>
     <input #fileInput type="file" style="display:none" accept="image/*" (change)="handleFileSelect($event)">
     <button ion-button icon-left color="primary" *ngIf="!fotoPreview" (click)="tirarFoto(fileInput)"><ion-icon name="camera"></ion-icon> Foto </button>

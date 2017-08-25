@@ -11,7 +11,7 @@
     <button ion-fab (click)="newCurso()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-list>
-    <button *ngFor="let item of listPessoas" ion-item (click)="editCurso(item)">
+    <button *ngFor="let item of listCursos" ion-item (click)="editCurso(item)">
       <ion-thumbnail item-start>
         <img src="{{urlFoto(item.foto)}}" onerror="this.src='assets/img/educa_logo.svg'">
       </ion-thumbnail>

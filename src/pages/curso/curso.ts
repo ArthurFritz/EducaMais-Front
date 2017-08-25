@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Loading, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {CursoFormPage} from "./curso-form/curso-form";
-import {PessoaService} from '../../services/pessoa.service';
+import {CursoService} from '../../services/curso.service';
 import {AppSettings} from "../../app.settings";
 
 @Component({
@@ -10,10 +10,10 @@ import {AppSettings} from "../../app.settings";
 })
 export class CursoPage {
 
-  public listPessoas:[any];
+  public listCursos:[any];
   private loader:Loading;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private pessoaService:PessoaService, public loadingCtrl: LoadingController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private cursoService:CursoService, public loadingCtrl: LoadingController) {}
 
   ionViewCanEnter(): boolean {
     this.carregarCursos();
@@ -36,8 +36,8 @@ export class CursoPage {
       content: "Aguarde..."
     });
     this.loader.present();
-    this.pessoaService.getPessoas().subscribe(suc=>{
-      this.listPessoas = suc;
+    this.cursoService.getCursos().subscribe(suc=>{
+      this.listCursos = suc;
       this.loader.dismiss();
     },
     err=>{
