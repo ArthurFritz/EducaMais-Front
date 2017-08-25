@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Informações Curso</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input formControlName="nome" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Referência</ion-label>
+        <ion-input formControlName="referencia" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Horas</ion-label>
+        <ion-input formControlName="horas" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Média</ion-label>
+        <ion-input formControlName="media" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Frequência</ion-label>
+        <ion-input formControlName="frequencia" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Inicio</ion-label>
+        <ion-input formControlName="inicio" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Alunos</ion-label>
+        <ion-input formControlName="alunos" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Dias de Aula</ion-label>
+        <ion-input formControlName="diasAula" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Criado as</ion-label>
+        <ion-input formControlName="createAt" type="text" value=""></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <div padding text-center>
+    <button ion-button icon-left color="primary" [disabled]="!form.valid" (click)="salvar()">
+      <ion-icon name="cloud-done"></ion-icon>
+      Salvar
+    </button>
+  </div>
+</ion-content>

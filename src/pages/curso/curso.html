@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cursos</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-fab bottom right>
+    <button ion-fab (click)="newCurso()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <button *ngFor="let item of listCursos" ion-item (click)="editCurso(item)">
+      <ion-thumbnail item-start>
+        <img src="{{urlFoto(item.foto)}}" onerror="this.src='assets/img/educa_logo.svg'">
+      </ion-thumbnail>
+      <ion-row>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6>
+          {{item.nome}} <br/>
+          {{item.email}}
+        </ion-col>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6>
+          <div text-left text-md-right text-lg-right text-xl-right>
+            {{item.instituicao}} <br>
+            {{item.nascimento | date:'d/M/y'}} <br>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          {{item.observacao}}
+        </ion-col>
+      </ion-row>
+    </button>
+  </ion-list>
+</ion-content>

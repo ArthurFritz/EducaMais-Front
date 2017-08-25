@@ -1,3 +1,11 @@
 page-home {
-
+    .text-primary{
+        color: color($colors, primary)
+    }
+    .text-secondary{
+        color: color($colors, secondary)
+    }
+    .text-roxo{
+        color: purple;
+    }
 }
