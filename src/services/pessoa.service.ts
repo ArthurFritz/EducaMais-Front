@@ -22,7 +22,12 @@ export class PessoaService {
     }
 
     getPessoas() {
-    return this.httpClient.get(this.urlPessoa)
+    return this.httpClient.get(this.urlPessoa+"?sort=nome")
+                          .map((response: Response) => response.json());
+    }
+
+    getAlunos() {
+    return this.httpClient.get(this.urlPessoa+"alunos")
                           .map((response: Response) => response.json());
     }
 

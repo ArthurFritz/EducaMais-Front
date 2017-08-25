@@ -8,7 +8,11 @@
 </ion-header>
 <ion-content>
     <ion-fab bottom right>
-        <button ion-fab (click)="newProfessor()"><ion-icon name="add"></ion-icon></button>
+        <button ion-fab><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-button icon-left color="secondary" (click)="jaTenhoCadastro()"><ion-icon name="people"></ion-icon>Já é um aluno?</button>
+            <button ion-button icon-left color="primary" (click)="newProfessor()"><ion-icon name="person-add"></ion-icon>Novo professor</button>
+        </ion-fab-list>
     </ion-fab>
     <ion-list>
         <button *ngFor="let item of listProfessor" ion-item (click)="editProfessor(item)">
