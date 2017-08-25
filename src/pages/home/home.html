@@ -8,13 +8,26 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-  <button ion-button color="secondary" menuToggle>Secondary</button>
+  <h1 class="text-primary">Projeto Educa +</h1>
+  <h4 class="text-secondary">
+    Olá {{nome}}, sabia que o Projeto Educa +, consiste em aulas de inglês e informática para as crianças do Lar Ternura, uma associação sem fins lucrativos, localizada em Campinas/ SP, destinada ao atendimento sócio educativo para crianças de Educação Infantil de 03 a 05 anos e 11 meses. Ao todo são <b>dezesseis instrutores voluntários</b> envolvidos com a proposta, os quais são profissionais de diversas áreas da MATERA.
+  </h4>
+  <h4 class="text-secondary">
+    Para melhor acompanhamento das aulas/alunos foi desenvolvido esse <b> PWA </b>, o desenvolvimento foi decorrente ao mês do voluntário.
+  </h4>
+  <h1 class="text-roxo">Integrantes da Equipe Roxa</h1>
+  <ion-list>
+      <button *ngFor="let item of listIntegrantes" ion-item >
+      <ion-thumbnail item-start>
+          <img src="{{item.foto}}" onerror="this.src='assets/img/educa_logo.svg'">
+      </ion-thumbnail>
+      <ion-row>
+          <ion-col class="text-roxo">
+              {{item.nome}} <br/>
+              {{item.filial}}
+          </ion-col>
+      </ion-row>
+      </button>
+  </ion-list>
   
 </ion-content>

@@ -8,10 +8,20 @@ import { LoginPage } from "../login/login";
 })
 export class HomePage {
 
+  public listIntegrantes = [
+                            {nome:"Arthur Fritz Santiago",filial:"Maringá - PR", foto:"assets/img/time/arthur.jpg"},
+                            {nome:"Eduardo de Oliveira Moreira",filial:"Campinas - SP", foto:"assets/img/time/eduardo.jpg"},
+                            {nome:"Renato Souto Maior",filial:"Maringá - PR", foto:"assets/img/time/renato.jpg"},
+                            {nome:"Ricardo Luiz Silveira",filial:"Maringá - PR", foto:"assets/img/time/ricardo.jpg"},
+                            {nome:"Yan Kabuki",filial:"Maringá - PR", foto:"assets/img/time/yan.jpg"},
+                          ];
+  public nome;
+                  
+
   constructor(public navCtrl: NavController,private _alertCtrl: AlertController) {
-    var nome = localStorage.getItem('nome');
+    this.nome = localStorage.getItem('nome');
     
-    if(!nome || nome == ""){
+    if(!this.nome || this.nome == ""){
       let alert = this._alertCtrl.create({
       title: 'Erro',
       subTitle: "Sessão inválida",
