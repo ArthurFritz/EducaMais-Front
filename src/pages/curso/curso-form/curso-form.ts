@@ -23,13 +23,7 @@ export class CursoFormPage {
     this.form = fb.group({
       'nome': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'referencia': [''],
-      'horas': [''],
-      'media': [''],
-      'frequencia': [''],
       'inicio': [''],
-      'alunos': [''],
-      'diasAula': [''],
-      'createAt': [''],
     });
 
     setTimeout(()=>{
@@ -37,13 +31,7 @@ export class CursoFormPage {
         this.form.setValue({
           nome : item.nome,
           referencia : item.referencia,
-          horas : item.horas,
-          media : item.media,
-          frequencia : item.frequencia,
-          inicio : item.inicio,
-          alunos : item.alunos,
-          diasAula : item.diasAula,
-          createAt : item.createAt
+          inicio : item.inicio
         })
         this.isEdit=true;
         this.idUpdate = item._id;
