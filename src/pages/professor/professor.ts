@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, Loading, LoadingController } from 'ionic-angular';
 import { ProfessorFormPage } from "./professor-form/professor-form";
+import { AlunosListPage } from "./alunos-list/alunos-list";
 import {PessoaService} from '../../services/pessoa.service';
 import { AppSettings } from "../../app.settings";
 
@@ -23,6 +24,11 @@ export class ProfessorPage {
   newProfessor(){
     this.navCtrl.push(ProfessorFormPage);
   }
+
+  jaTenhoCadastro(){
+    this.navCtrl.push(AlunosListPage);
+  }
+
   editProfessor(item){
     this.navCtrl.push(ProfessorFormPage, {item:item})
   }
@@ -37,7 +43,7 @@ export class ProfessorPage {
     });
     this.loader.present();
     this.pessoaService.getProfessores().subscribe(suc=>{
-      this.listProfessor = suc;
+      this.listProfessor = this.orderList(suc);
       this.loader.dismiss();
     }, 
     err=>{
@@ -46,5 +52,15 @@ export class ProfessorPage {
     })
   }
 
+  private orderList(suc){
+    if(suc.length>0){
+      suc.sort((left, right): number => {
+        if (left.pessoa.nome < right.pessoa.nome) return -1;
+        if (left.pessoa.nome > right.pessoa.nome) return 1;
+        return 0;
+      }); 
+    }
+    return suc;
+  }
   
 }
